@@ -1,0 +1,6 @@
+{
+  "summary":  "Architectural implementation plan for Dark Claude AI Coding Master - a cyberpunk dark-themed coding IDE with Gemini 2.5/3.8 AI engine, Claude-style coding persona, syntax-highlighted code editor, sandbox code runner, Google Sign-In with Firebase Auth, and persistent Firestore cloud sync.",
+  "updatedAt":  "2026-10-28T14:01:13.685464782Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

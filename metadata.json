@@ -1,0 +1,6 @@
+{
+  "name": "Dark Claude",
+  "description": "Dark Claude AI Coding Master - Cyberpunk IDE, AI models, and secure cloud sync",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

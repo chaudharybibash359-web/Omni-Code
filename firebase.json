@@ -1,0 +1,8 @@
+{
+  "firestore": [
+    {
+      "database": "ai-studio-android-omnicode-a8c32b58-9ebd-4ff6-9863-b129e3416c88",
+      "rules": "firestore.rules"
+    }
+  ]
+}

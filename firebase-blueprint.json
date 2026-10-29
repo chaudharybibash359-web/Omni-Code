@@ -1,0 +1,79 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile information and preferences",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "createdAt": { "type": "integer" },
+        "lastLoginAt": { "type": "integer" }
+      },
+      "required": ["uid", "createdAt"]
+    },
+    "ChatSession": {
+      "title": "ChatSession",
+      "description": "An AI coding session containing conversation history",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "modelName": { "type": "string" },
+        "persona": { "type": "string" },
+        "createdAt": { "type": "integer" },
+        "updatedAt": { "type": "integer" },
+        "messageCount": { "type": "integer" }
+      },
+      "required": ["id", "userId", "title", "createdAt", "updatedAt"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "A single prompt or response message within a session",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sessionId": { "type": "string" },
+        "sender": { "type": "string", "enum": ["user", "model"] },
+        "content": { "type": "string" },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["id", "sessionId", "sender", "content", "timestamp"]
+    },
+    "CodeSnippet": {
+      "title": "CodeSnippet",
+      "description": "A saved code block or algorithm in the user's vault",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "title": { "type": "string" },
+        "language": { "type": "string" },
+        "code": { "type": "string" },
+        "timestamp": { "type": "integer" }
+      },
+      "required": ["id", "userId", "title", "language", "code", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile document"
+    },
+    "/users/{userId}/sessions/{sessionId}": {
+      "schema": "ChatSession",
+      "description": "AI coding session header"
+    },
+    "/users/{userId}/sessions/{sessionId}/messages/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "Messages inside an AI coding session"
+    },
+    "/users/{userId}/snippets/{snippetId}": {
+      "schema": "CodeSnippet",
+      "description": "Saved code snippets in user vault"
+    }
+  }
+}
